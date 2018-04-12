@@ -26,7 +26,7 @@ public class player : MonoBehaviour {
 
         transform.Translate(straffe, 0, translation);
 
-        if(Input.GetKeyDown(KeyCode.Space)){
+		if(Input.GetKeyDown(KeyCode.Space) && IsGrounded()){
             rb.AddForce(Vector3.up * 5, ForceMode.Impulse);
         }
 
