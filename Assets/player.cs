@@ -24,7 +24,14 @@ public class player : MonoBehaviour {
         translation *= Time.deltaTime;
         straffe *= Time.deltaTime;
 
-        transform.Translate(straffe, 0, translation);
+        //transform.Translate(straffe, 0, translation);
+
+		Vector3 movement = new Vector3 (straffe, 0, translation);
+		//movement.Scale (transform.forward);
+
+		Debug.Log (movement);
+
+		rb.AddForce(movement);
 
 		if(Input.GetKeyDown(KeyCode.Space) && IsGrounded()){
             rb.AddForce(Vector3.up * 5, ForceMode.Impulse);
